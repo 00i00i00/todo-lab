@@ -37,13 +37,12 @@ this.todo[index].completed = true;
 }
 
 filterSearch = () => {
+this.todoKeep = JSON.parse(JSON.stringify(this.todo));
+if (this.filterInput === '' || this.filterInput === null) {
+  this.todo = this.todoKeep;
+console.log(this.todoKeep);
 
-// if (this.filterInput === '' || this.filterInput === null) {
-//   console.log(this.todoKeep);
-// this.todo = this.todoKeep;
-// console.log(this.todoKeep);
-
-// }
+}
 
 if (this.filterInput !== null) {
 this.filterInput = this.filterInput.toLowerCase();
