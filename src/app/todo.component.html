@@ -1,0 +1,17 @@
+<div style="text-align:center" class="container">
+  <h1>
+    TODO List
+  </h1>
+  <h2>
+    A place to store the things you have to do!
+  </h2>
+  <input (change)="filterSearch()" [(ngModel)]="filterInput" type="text" class="filter" placeholder="Filter your to-dos" />
+  <div class="todoList">
+    <ol>
+      <li *ngFor="let item of todo; let i = index;"><button (click)="completeTask(i)" *ngIf="!item.completed" class="completeBtn" >Complete</button><span [ngClass]="{strike: item.completed }">{{ item.task }}</span><button class="deleteBtn" (click)="removeTask(i)"><i class="material-icons">clear</i></button></li>
+    </ol>
+  </div>
+  <input type="text" class="addInput" placeholder="Add your to do" [(ngModel)]="taskInput"/>
+  <button (click)="addTask()" class="addBtn">Add</button>
+</div>
+

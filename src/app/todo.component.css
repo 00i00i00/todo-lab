@@ -1,0 +1,104 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: 'Open Sans', sans-serif;
+    background-color: white;
+    border: none;
+    border-radius: 7px;
+    width: 400px;
+    margin: 10% auto;
+}
+
+
+
+h1, h2, ol {
+    margin-left: 20px;
+
+}
+
+h1 {
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+
+
+h2 {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+button {
+    border: none;
+    border-radius: 7px;
+}
+
+.filter, .addInput, .addBtn {
+    font-size: 0.9rem;
+    width: 345px;
+    align-self: center;
+    border-radius: 7px;
+    
+}
+
+.filter, .addInput {
+    padding: 10px;
+    border: 1px solid lightgrey;
+    color: lightgrey;
+}
+
+
+.addBtn {
+    padding: 10px;
+    background-color: #ff66cc;
+    color: white;
+    margin-bottom: 20px;
+    margin-top: 15px;
+    width: 367px;
+}
+
+.completeBtn {
+    font-size: .7rem;
+    padding: 5px;
+    background-color: white;
+    border: 1px solid #ff66cc;
+    color: #ff66cc;
+    margin-right: 20px; 
+}
+
+.deleteBtn, .material-icons {
+    background-color: white; 
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 150px;
+
+}
+
+.material-icons {
+font-size: 1rem;
+
+}
+
+
+ol {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+ol li {
+    text-align: left;
+    padding-left: 15px;
+    position: relative;
+    padding-top: 10px; 
+}
+ 
+.strike {
+    text-decoration: line-through;
+
+}
+
