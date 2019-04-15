@@ -13,8 +13,9 @@ export class TodoComponent {
   taskInput: string;
   todo: Item[] = [{task: 'Walk the dog.', completed: false}, {task: "Go to the store.", completed: true}, {task: 'Get gas.', completed: false}, {task: 'Wash the car.', completed: false}];
   filterInput: string;
-  // todoNew: Item[];
-  // chooseArray: boolean = false;
+  // filteredTodo = [...this.todo];
+  filteredTodo = this.todo.slice();
+
 
   addTask = () => {
     const newItem = {
@@ -37,10 +38,9 @@ this.todo[index].completed = true;
 }
 
 filterSearch = () => {
-
 if (this.filterInput !== null) {
 this.filterInput = this.filterInput.toLowerCase();
-this.todo = this.todo.filter(item => item.task.toLowerCase().includes(this.filterInput));
+this.filteredTodo = this.todo.filter(item => item.task.toLowerCase().includes(this.filterInput));
 } 
 }
 
