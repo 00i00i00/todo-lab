@@ -13,8 +13,8 @@ export class TodoComponent {
   taskInput: string;
   todo: Item[] = [{task: 'Walk the dog.', completed: false}, {task: "Go to the store.", completed: true}, {task: 'Get gas.', completed: false}, {task: 'Wash the car.', completed: false}];
   filterInput: string;
-  todoNew: Item[];
-  todoKeep: Item[];
+  // todoNew: Item[];
+  // chooseArray: boolean = false;
 
   addTask = () => {
     const newItem = {
@@ -37,12 +37,6 @@ this.todo[index].completed = true;
 }
 
 filterSearch = () => {
-this.todoKeep = JSON.parse(JSON.stringify(this.todo));
-if (this.filterInput === '' || this.filterInput === null) {
-  this.todo = this.todoKeep;
-console.log(this.todoKeep);
-
-}
 
 if (this.filterInput !== null) {
 this.filterInput = this.filterInput.toLowerCase();
