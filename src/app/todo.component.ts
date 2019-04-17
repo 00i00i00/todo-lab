@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { filterQueryId } from '@angular/core/src/view/util';
 interface Item {
   task: string;
   completed: boolean;
@@ -13,8 +14,8 @@ export class TodoComponent {
   taskInput: string;
   todo: Item[] = [{task: 'Walk the dog.', completed: false}, {task: "Go to the store.", completed: true}, {task: 'Get gas.', completed: false}, {task: 'Wash the car.', completed: false}];
   filterInput: string;
-  // filteredTodo = [...this.todo];
-  filteredTodo = this.todo.slice();
+  filteredTodo = [...this.todo];
+  // filteredTodo = this.todo.slice();
 
 
   addTask = () => {
@@ -24,24 +25,28 @@ export class TodoComponent {
     };
   
     this.todo.push(newItem);
+    this.filterSearch();
     this.taskInput = null;
     
   }
 
 
-removeTask = (index) => {
-this.todo.splice(index, 1);
+removeTask = item => {
+  const index = this.todo.indexOf(item);
+  this.todo.splice(index, 1);
+  this.filterSearch();
 }
 
-completeTask = (index) => {
-this.todo[index].completed = true;
-}
+completeTask = item => {
+  const index = this.todo.indexOf(item);
+  this.todo[index].completed = true;
+  this.filterSearch();
+  
+  }
 
 filterSearch = () => {
-if (this.filterInput !== null) {
-this.filterInput = this.filterInput.toLowerCase();
-this.filteredTodo = this.todo.filter(item => item.task.toLowerCase().includes(this.filterInput));
-} 
+const lower = this.filterInput ? this.filterInput.toLowerCase(): '';
+this.filteredTodo = this.todo.filter(item => item.task.toLowerCase().includes(lower));
 }
 
 }

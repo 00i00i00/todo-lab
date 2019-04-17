@@ -8,7 +8,9 @@
   <input (input)="filterSearch()" [(ngModel)]="filterInput" type="text" class="filter" placeholder="Filter your to-dos" />
   <div class="todoList">
     <ol>
-      <li *ngFor="let item of filteredTodo; let i = index;"><button (click)="completeTask(i)" *ngIf="!item.completed" class="completeBtn" >Complete</button><span [ngClass]="{strike: item.completed }">{{ item.task }}</span><button class="deleteBtn" (click)="removeTask(i)"><i class="material-icons">clear</i></button></li>
+      <!-- <li *ngFor="let item of filteredTodo; let i = index;"><button (click)="completeTask(i)" *ngIf="!item.completed" class="completeBtn" >Complete</button><span [ngClass]="{strike: item.completed }">{{ item.task }}</span><button class="deleteBtn" (click)="removeTask(i)"><i class="material-icons">clear</i></button></li> -->
+      <li *ngFor="let item of filteredTodo; let i = index"><button (click)="completeTask(item)" *ngIf="!item.completed" class="completeBtn" >Complete</button><span [ngClass]="{strike: item.completed }">{{ item.task }}</span><button class="deleteBtn" (click)="removeTask(item)"><i class="material-icons">clear</i></button></li>
+
     </ol>
   </div>
   <input type="text" class="addInput" placeholder="Add your to do" [(ngModel)]="taskInput"/>
